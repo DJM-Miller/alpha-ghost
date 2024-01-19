@@ -16,6 +16,7 @@ body, html {
   height: 100%;
   color: #777;
   line-height: 1.8;
+  background-color: #CCCCCC;
 }
 
 /* Create a Parallax Effect */
@@ -28,8 +29,8 @@ body, html {
 
 /* First image (Logo. Full height) */
 .bgimg-1 {
-  background-image: url('/src/assets/background3.jpg');
-  min-height: 100%;
+  background-image: url('/src/assets/AGC Landscape cropped.jpg');
+  min-height: 100%; 
 }
 
 /* Second image (Design) */
@@ -46,6 +47,11 @@ body, html {
 
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
+
+.w3-bar-item {
+  color: #000000; /* Hexadecimal code for light gray */
+  /* Or you can use RGB values: color: rgb(204, 204, 204); */
+}
 
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1600px) {
@@ -85,7 +91,7 @@ body, html {
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
   <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">ALPHA GHOST CAMOUFLAGE</span>
+    <!-- <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">ALPHA GHOST CAMOUFLAGE</span> -->
   </div>
 </div>
 
@@ -102,25 +108,6 @@ body, html {
   </p>
 </div>
 
-<div class="w3-row w3-center w3-dark-grey w3-padding-16">
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">5+</span><br>
-    Patterns
-  </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">55+</span><br>
-    Some Stat
-  </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">89+</span><br>
-    Happy Clients
-  </div>
-  <div class="w3-quarter w3-section">
-    <span class="w3-xlarge">15+</span><br>
-    Products Tested
-  </div>
-</div>
-
 <!-- Second Parallax Image with Portfolio Text -->
 <div class="bgimg-2 w3-display-container w3-opacity-min">
   <div class="w3-display-middle">
@@ -129,23 +116,57 @@ body, html {
 </div>
 
 <!-- Container (Portfolio Section) -->
-<div class="w3-content w3-container w3-padding-64" id="design">
+<!-- <div class="w3-content w3-container w3-padding-64" id="design">
   <h3 class="w3-center">OUR DESIGNS</h3>
   <p class="w3-center"><em> Whether you are trying to fill your freeze or defend your homeland <br> our patterns are designed to suit your needs in any terrain.</em></p><br>
   <div class="w3-row">
     <div class="w3-col m6 w3-center w3-padding-large">
-      <!-- <p><b><i class="fa fa-user w3-margin-right"></i>My Name</b></p><br> -->
-      <img src="src/assets/camo-patterns.jpg" class="w3-round w3-image" alt="Camo Patterns" width="500" height="333">
-    </div>
+      <img src="src/assets/AGC Trifold Camo Samples.jpg" class="w3-round w3-image" alt="Camo Patterns" width="500" height="333">
+    </div> -->
 
     <!-- Hide this text on small devices -->
-    <div class="w3-col m6 w3-hide-small w3-padding-large">
+    <!-- <div class="w3-col m6 w3-hide-small w3-padding-large">
       <p>Within the Alpha Ghost Camouflage line are planned environmental subsets such as Mountain Ghost - Urban Ghost - Desert Ghost - and more! Our design
         team can easily and rapidly modify patterns to conceal in any specific environment necassary, which opens the door to unlimited marketing possibilities.
       </p>
       <img src="src/assets/alpha_ghost_camo.jpg" class="w3-round w3-image" alt="Camo Patterns" width="500" height="333">
     </div>
+</div> -->
+
+<div class="w3-content w3-container w3-padding-64" id="design">
+  <h3 class="w3-center">OUR DESIGNS</h3>
+  <p class="w3-center">
+    <em>
+      Whether you are trying to fill your freeze or defend your homeland
+      <br> Our patterns are designed to suit your needs in any terrain.
+    </em>
+  </p>
+  <div class="w3-row">
+    <div class="w3-col m12 w3-center w3-padding-large">
+      <img src="src/assets/AGC Camo Examples.jpg" class="w3-round w3-image" alt="Camo Patterns" width="100%" height="auto">
+      <p>
+        Within the Alpha Ghost Camouflage line are planned environmental subsets such as Mountain Ghost - Urban Ghost - Desert Ghost - and more! Our design
+        team can easily and rapidly modify patterns to conceal in any specific environment necessary, which opens the door to unlimited marketing possibilities.
+      </p>
+    </div>
+  </div>
 </div>
+
+<!-- Container (High Performance Characteristics Section) -->
+<div class="w3-content w3-container w3-padding-64" id="characteristics">
+  <h3 class="w3-center">Some of the High Performance Characteristics of the Alpha Ghost Camouflage Line</h3>
+  <ul>
+    <li>Natural Environment Matching Fractal Patterns Customizable to Any Environment (Broad or Specific) - Rapid Design Technology - No Guesswork</li>
+    <li>Commercial/Hunting Variations - Urban/Alpine/Mountain/Desert/Jungle/ Field, etc.</li>
+    <li>Law Enforcement/Military Capable Variations</li>
+    <li>Simultaneously Reduces Contrast in Low Light Environments and Daylight Environments Across a Broad Spectral Region</li>
+    <li>Very Aesthetically Appealing for Marketability (Cool Factor)</li>
+    <li>Exceptional and Unique Marketing Ideas</li>
+  </ul>
+</div>
+
+
+
 
 <!-- Modal for full size images on click-->
 <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
@@ -165,8 +186,7 @@ body, html {
 
 <!-- Container (Contact Section) -->
 <div class="w3-content w3-container w3-padding-64" id="contact">
-  <h3 class="w3-center">WE WOULD LOVE TO WORK WITH YOU</h3>
-  <p class="w3-center"><em>How Can Alpha Ghost Camouflage Benefit Your Business?</em></p>
+  <h3 class="w3-center">How Can Alpha Ghost Camouflage Benefit Your Business?</h3>
   <p> Alpha Ghost Camouflage would be a perfect fit into any quality product line in the hunting and tactical industries, with 
       our own line of hunting and tactical clothing devised with the most effective and aesthetically appealing camouflage available.
       Based on a single, highly advanced pattern with environmentally matched colors that perfectly transcends both markets. Opportunities
