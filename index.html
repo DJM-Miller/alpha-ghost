@@ -21,7 +21,7 @@ body, html {
 }
 
 /* Create a Parallax Effect */
-.bgimg-1a, .bgimg-2, .bgimg-3 {
+.bgimg-1a, .bgimg-1b, .bgimg-2, .bgimg-3 {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -36,9 +36,8 @@ body, html {
 
 /* First image for Phones (Logo. Full height) */
 .bgimg-1b {
-  background-image: url('/src/images/AGC-Landscape.jpg');
+  background-image: url('/src/images/AGC-bkgd-mobile.jpg');
   min-height: 100%; 
-  max-width: 100%;
 }
 
 /* Second image (Design) */
@@ -63,7 +62,7 @@ body, html {
 
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1600px) {
-  .bgimg-1a, .bgimg-2, .bgimg-3 {
+  .bgimg-1b, .bgimg-2, .bgimg-3 {
     background-attachment: scroll;
     min-height: 400px;
   }
@@ -93,7 +92,7 @@ body, html {
 </div>
 
 <!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1a w3-display-container w3-hide-small w3-opacity-min" id="home">
+<div class="bgimg-1a w3-display-container w3-hide-small w3-hide-medium w3-opacity-min" id="home">
   <div class="w3-display-middle" style="white-space:nowrap;">
   </div>
 </div>
@@ -147,7 +146,7 @@ body, html {
     <li>Very Aesthetically Appealing for Marketability (Cool Factor)</li>
     <li>Exceptional and Unique Marketing Ideas</li>
   </ul>
-  <div class="w3-row">
+  <div class="w3-row w3-hide-small">
     <div class="w3-col m4 w3-center w3-padding-large">
       <p class="w3-center">
         Near-Infrared (NIR)
