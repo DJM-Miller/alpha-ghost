@@ -21,7 +21,7 @@ body, html {
 }
 
 /* Create a Parallax Effect */
-.bgimg-1a, .bgimg-1b, .bgimg-2, .bgimg-3 {
+.bgimg-1a, .bgimg-1b, .bgimg-2, .bgimg-3, .bgimg-4 {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -52,6 +52,12 @@ body, html {
   min-height: 400px;
 }
 
+/* Forth image */
+.bgimg-4 {
+  background-image: url("src/images/bkgr-jungle.jpg");
+  min-height: 400px;
+}
+
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
 
@@ -62,7 +68,7 @@ body, html {
 
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1600px) {
-  .bgimg-1b, .bgimg-2, .bgimg-3 {
+  .bgimg-1b, .bgimg-2, .bgimg-3, .bgimg-4{
     background-attachment: scroll;
     min-height: 400px;
   }
@@ -79,15 +85,17 @@ body, html {
     </a>
     <a href="#home" class="w3-bar-item w3-button">HOME</a>
     <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
-    <a href="#Camo Patterns" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> CAMO PATTERNS</a>
+    <a href="#Camo Patterns" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> CAMO</a>
+    <a href="#team" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-users"></i></i> TEAM</a>
     <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
   </div>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
     <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
-    <a href="#Camo Patterns" class="w3-bar-item w3-button" onclick="toggleFunction()">CAMO PATTERNS</a>
-    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+    <a href="#Camo Patterns" class="w3-bar-item w3-button" onclick="toggleFunction()">CAMO</a>
+    <a href="#team" class="w3-bar-item w3-button" onclick="toggleFunction()">TEAM</a>
+    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>   
   </div>
 </div>
 
@@ -123,11 +131,9 @@ body, html {
 <div class="w3-content w3-container w3-padding-64" id="Camo Patterns">
   <h3 class="w3-center">Camouflage Patterns</h3>
   <p class="w3-center">
-    <em>
       Within the Alpha Ghost Camouflage line are planned environmental subsets such as Mountain Ghost&trade; - Urban Ghost&trade; - Desert Ghost&trade; - and more! Our design
       team can easily and rapidly modify patterns to conceal in any specific environment necessary, which opens the door to unlimited marketing possibilities.
-      Our patterns can be modified to suit market needs in any terrain.
-    </em>
+      Our patterns can be modified to suit market needs in any terrain. 
   </p>
   <div class="w3-row">
     <div class="w3-col m12 w3-center w3-padding-large">
@@ -136,6 +142,12 @@ body, html {
         Soldier wearing actual prototype model uniform in Mountain Arid Pattern.
       </p>
     </div>
+  </div>
+  <div class="w3-center">
+    <img src="src/images/camo-wraps.png" class="w3-image" alt="Camo Wraps">
+    <p class="w3-center">
+      Vehicle Wraps
+    </p>
   </div>
   <h3 class="w3-center">Some of the High Performance Characteristics of the Alpha Ghost Camouflage Line</h3>
   <ul>
@@ -173,6 +185,84 @@ body, html {
 
 <!-- Third Parallax Image with Design Text -->
 <div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide">Meet The Team</span>
+  </div>
+</div>
+
+<!-- Container (The Team Section) -->
+<div class="w3-content w3-container w3-padding-32" id="team">
+  <div class="w3-content w3-container " id="Camo Patterns">
+    <h3 class="w3-center">About Alpha Dynamic Concepts</h3>
+    <p class="w3-center w3-padding-32">
+      Our team at Alpha Dynamic Concepts (ADC) has vastly expanded knowledge of the camouflage science through countless
+      hours of cross-disciplinary applied research and development, using a creative, unconventional mindset.
+      Our primary focus thus far has been directed towards military applications. ADC is only now beginning to pursue
+      business opportunities in the hunting and tactical industries. We intend to deliver the absolute best camouflage
+      system available.
+    </p>
+    <style>
+      .person-section {
+        border: 2px solid #ccc;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+    </style>
+    <div class="w3-row">
+      <div class="w3-col m3 person-section">
+        <h3 class="w3-center">
+          Robert Reitz
+        </h3>
+        <h5 class="w3-center">
+          Chief Operations Officer
+        </h5>
+        <p class="w3-center">
+          LCDR SEAL (Retired)<br>
+          Business Development
+        </p>
+      </div>
+
+      <div class="w3-col m2"><h3 class="w3-center"></h3>
+
+      </div>
+      <div class="w3-col m2 person-section">
+        <h3 class="w3-center">
+          Jeff Laurell
+        </h3>
+        <h5 class="w3-center">
+          President
+        </h5>
+        <p class="w3-center">
+          Business Development<br>
+          Avid Hunter &
+          Outdoorsman
+        </p>
+      </div>
+
+      <div class="w3-col m2"><h3 class="w3-center"></h3>
+
+      </div>
+      <div class="w3-col m3 person-section">
+        <h3 class="w3-center">
+          Colin Ingram Ph.D.
+        </h3>
+        <h5 class="w3-center">
+          Chief Technical Officer
+        </h5>
+        <p class="w3-center">
+          Biophysicist<br>
+          Background in Optical Spectroscopies and Fluorescence Microscopy Techniques
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Fourth Parallax Image with Design Text -->
+<div class="bgimg-4 w3-display-container w3-opacity-min">
   <div class="w3-display-middle">
      <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
   </div>
@@ -224,62 +314,7 @@ body, html {
     </div>
   </div>
   
-  <style>
-    .person-section {
-      border: 2px solid #ccc;
-      padding: 10px;
-      margin-bottom: 20px;
-    }
-  </style>
-
-  <!-- Meet the team section -->
-  <div class="w3-row">
-    <div class="w3-col m3 person-section">
-      <h3 class="w3-center">
-        Robert Reitz
-      </h3>
-      <h5 class="w3-center">
-        Chief Operations Officer
-      </h5>
-      <p class="w3-center">
-        LCDR SEAL (Retired)<br>
-        Business Development
-      </p>
-    </div>
-
-    <div class="w3-col m2"><h3 class="w3-center"></h3>
-
-    </div>
-    <div class="w3-col m2 person-section">
-      <h3 class="w3-center">
-        Jeff Laurell
-      </h3>
-      <h5 class="w3-center">
-        President
-      </h5>
-      <p class="w3-center">
-        Business Development<br>
-        Avid Hunter &
-        Outdoorsman
-      </p>
-    </div>
-
-    <div class="w3-col m2"><h3 class="w3-center"></h3>
-
-    </div>
-    <div class="w3-col m3 person-section">
-      <h3 class="w3-center">
-        Colin Ingram Ph.D.
-      </h3>
-      <h5 class="w3-center">
-        Chief Technical Officer
-      </h5>
-      <p class="w3-center">
-        Biophysicist<br>
-        Background in Optical Spectroscopies and Fluorescence Microscopy Techniques
-      </p>
-    </div>
-  </div>
+  
 </div>
 
 <!-- Footer -->
