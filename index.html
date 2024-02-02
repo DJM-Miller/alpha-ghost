@@ -32,12 +32,14 @@ body, html {
 .bgimg-1a {
   background-image: url('/src/images/AGC-bkgd.jpg');
   min-height: 100%; 
+  background-size: 100% 100%;
 }
 
 /* First image for Phones (Logo. Full height) */
 .bgimg-1b {
   background-image: url('/src/images/AGC-bkgd-mobile.jpg');
   min-height: 100%; 
+  background-size: 100% 100%;
 }
 
 /* Second image (Design) */
@@ -79,7 +81,8 @@ body, html {
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
-  <div class="w3-hide-small w3-center">
+  <!-- Navbar on Large screens -->
+  <div class="w3-hide-small w3-hide-medium w3-center">
     <div class="w3-bar" id="myNavbar">
       <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-margin-right "><i class="fa fa-home w3-padding-small"></i>HOME</a>
       <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-margin-right"><i class="fa fa-user w3-padding-small"></i> ABOUT</a>
@@ -89,12 +92,12 @@ body, html {
     </div>
   </div>
 
-  <!-- Navbar on small screens -->
-  <div class="w3-hide-large w3-hide-medium">
-    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+  <!-- Navbar on small and medium screens -->
+  <div class="w3-hide-large">
+    <a class="w3-bar-item w3-button w3-hover-black w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
       <i class="fa fa-bars"></i>
     </a>
-    <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium">
+    <div id="navDemo" class="w3-bar-block w3-black w3-hide">
       <a href="#home-small" class="w3-bar-item w3-button" onclick="toggleFunction()"><i class="fa fa-home w3-padding"></i>HOME</a>
       <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()"><i class="fa fa-user w3-padding"></i>ABOUT</a>
       <a href="#Camo" class="w3-bar-item w3-button" onclick="toggleFunction()"><i class="fa fa-th w3-padding"></i>CAMO</a>
@@ -105,11 +108,11 @@ body, html {
 </div>
 
 <!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1a w3-display-container w3-hide-small w3-hide-medium w3-opacity-min" id="home">
+<div class="bgimg-1a w3-display-container w3-hide-small  w3-opacity-min" id="home">
   <div class="w3-display-middle" style="white-space:nowrap;">
   </div>
 </div>
-<div class="bgimg-1b w3-display-container w3-hide-large w3-opacity-min" id="home-small">
+<div class="bgimg-1b w3-display-container w3-hide-large w3-hide-medium w3-opacity-min" id="home-small">
   <div class="w3-display-middle" style="white-space:nowrap;">
   </div>
 </div>
