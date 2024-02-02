@@ -79,23 +79,28 @@ body, html {
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
-  <div class="w3-bar" id="myNavbar">
-    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-      <i class="fa fa-bars"></i>
-    </a>
-    <a href="#home" class="w3-bar-item w3-button">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
-    <a href="#Camo Patterns" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> CAMO</a>
-    <a href="#team" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-users"></i></i> TEAM</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+  <div class="w3-hide-small w3-center">
+    <div class="w3-bar" id="myNavbar">
+      <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-margin-right "><i class="fa fa-home w3-padding-small"></i>HOME</a>
+      <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-margin-right"><i class="fa fa-user w3-padding-small"></i> ABOUT</a>
+      <a href="#Camo" class="w3-bar-item w3-button w3-padding-large w3-margin-right"><i class="fa fa-th w3-padding-small"></i> CAMO</a>
+      <a href="#team" class="w3-bar-item w3-button w3-padding-large w3-margin-right"><i class="fa fa-users w3-padding-small"></i> TEAM</a>
+      <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-margin-right"><i class="fa fa-envelope w3-padding-small"></i> CONTACT</a>
+    </div>
   </div>
 
   <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium">
-    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
-    <a href="#Camo Patterns" class="w3-bar-item w3-button" onclick="toggleFunction()">CAMO</a>
-    <a href="#team" class="w3-bar-item w3-button" onclick="toggleFunction()">TEAM</a>
-    <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>   
+  <div class="w3-hide-large w3-hide-medium">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium">
+      <a href="#home-small" class="w3-bar-item w3-button" onclick="toggleFunction()"><i class="fa fa-home w3-padding"></i>HOME</a>
+      <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()"><i class="fa fa-user w3-padding"></i>ABOUT</a>
+      <a href="#Camo" class="w3-bar-item w3-button" onclick="toggleFunction()"><i class="fa fa-th w3-padding"></i>CAMO</a>
+      <a href="#team" class="w3-bar-item w3-button" onclick="toggleFunction()"><i class="fa fa-users w3-padding"></i>TEAM</a>
+      <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()"><i class="fa fa-envelope w3-padding"></i>CONTACT</a>   
+    </div>
   </div>
 </div>
 
@@ -104,7 +109,7 @@ body, html {
   <div class="w3-display-middle" style="white-space:nowrap;">
   </div>
 </div>
-<div class="bgimg-1b w3-display-container w3-hide-large w3-opacity-min" id="home">
+<div class="bgimg-1b w3-display-container w3-hide-large w3-opacity-min" id="home-small">
   <div class="w3-display-middle" style="white-space:nowrap;">
   </div>
 </div>
@@ -134,7 +139,7 @@ body, html {
 </div>
 
 <!-- Container (Camo Patterns Section) -->
-<div class="w3-content w3-container w3-padding-64" id="Camo Patterns">
+<div class="w3-content w3-container w3-padding-64" id="Camo">
   <h3 class="w3-center">Camouflage Patterns</h3>
   <p class="w3-center">
       Within the Alpha Ghost Camouflage line are planned environmental subsets such as Mountain Ghost&trade; - Urban Ghost&trade; - Desert Ghost&trade; - and more! Our design
@@ -388,13 +393,10 @@ function myFunction() {
 
 // Used to toggle the menu on small screens when clicking on the menu button
 function toggleFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
+  var x = document.getElementById("navDemo");
+  x.classList.toggle("w3-show");
 }
+
 </script>
 
 </body>
