@@ -1,0 +1,79 @@
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
+  background-color: #000000;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1a, .bgimg-1b, .bgimg-2, .bgimg-3, .bgimg-4 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image for Computers (Logo. Full height) */
+.bgimg-1a {
+  background-image: url('/src/images/AGC-bkgd.jpg');
+  min-height: 100%; 
+  background-size: 100% 100%;
+}
+
+/* First image for Phones (Logo. Full height) */
+.bgimg-1b {
+  background-image: url('/src/images/AGC-bkgd-mobile.jpg');
+  min-height: 100%; 
+  background-size: 100% 100%;
+}
+
+/* Second image (Design) */
+.bgimg-2 {
+  background-image: url("/src/images/bkgd-mtns.jpg");
+  min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+  background-image: url("/src/images/bkgd-desert.jpg");
+  min-height: 400px;
+}
+
+/* Forth image */
+.bgimg-4 {
+  background-image: url("/src/images/bkgr-jungle.jpg");
+  min-height: 400px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+.w3-bar-item {
+  color: #ffffff; /* Hexadecimal code for light gray */
+  /* Or you can use RGB values: color: rgb(204, 204, 204); */
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1b, .bgimg-2, .bgimg-3, .bgimg-4{
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+}
+
+.person-section {
+    border: 2px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center; /* Center the content */
+    min-width: 200px;
+    min-height: 445px;
+  }
+
+  .profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
