@@ -1,4 +1,4 @@
-function goTop(){
+export function goTop(){
     // Check if the browser supports smooth scrolling
     if ('scrollBehavior' in document.documentElement.style) {
       // Modern browsers with smooth scrolling support
@@ -14,7 +14,7 @@ function goTop(){
   
   // Change style of navbar on scroll
   window.onscroll = function() {myFunction()};
-  function myFunction() {
+  export function myFunction() {
       var navbar = document.getElementById("myNavbar");
       if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
           navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-black";
@@ -25,7 +25,7 @@ function goTop(){
   }
   
   // Used to toggle the menu on small screens when clicking on the menu button
-  function toggleFunction() {
+  export function toggleFunction() {
     var x = document.getElementById("navDemo");
     x.classList.toggle("w3-show");
   }
