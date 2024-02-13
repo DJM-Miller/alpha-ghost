@@ -167,7 +167,7 @@
         </a>        
       </div>
       <p>Send a message, or leave a note:</p>
-      <form action="/action_page.php" target="_blank">
+      <form id="contactForm" action="/action_page.php" target="_blank">
         <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
           <div class="w3-half">
             <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
@@ -177,6 +177,8 @@
           </div>
         </div>
         <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+        <p>Please solve this math problem: <span id="mathCaptcha"></span></p>
+        <input type="text" id="captchaInput" name="captchaInput" placeholder="Solution" required>
         <button class="w3-button w3-black w3-section" type="submit">
           <i class="fa fa-paper-plane"></i> SEND MESSAGE
         </button>
@@ -238,6 +240,34 @@ function toggleFunction() {
   var x = document.getElementById("navDemo");
   x.classList.toggle("w3-show");
 }
+
+function generateMathCaptcha() {
+    var num1 = Math.floor(Math.random() * 10);
+    var num2 = Math.floor(Math.random() * 10);
+    var operator = ['+', '-', 'x'][Math.floor(Math.random() * 3)];
+    var captcha = num1 + ' ' + operator + ' ' + num2;
+    document.getElementById("mathCaptcha").textContent = captcha;
+    document.getElementById("captchaInput").value = '';
+}
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+    var captcha = document.getElementById("mathCaptcha").textContent;
+    var userAnswer = document.getElementById("captchaInput").value;
+    var result;
+    
+    // Calculate the expected result of the math captcha
+    eval("result = " + captcha);
+
+    if (parseInt(userAnswer) !== result) {
+        alert("Please solve the math CAPTCHA correctly.");
+        event.preventDefault(); // Prevent form submission
+        generateMathCaptcha(); // Generate a new CAPTCHA
+    }
+});
+
+window.onload = function() {
+    generateMathCaptcha();
+};
 </script>
 </body>
 </html>
