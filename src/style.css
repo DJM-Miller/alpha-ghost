@@ -16,14 +16,14 @@ body, html {
 
 /* First image for Computers (Logo. Full height) */
 .bgimg-1a {
-  background-image: url('/src/images/AGC-bkgd.jpg');
+  background-image: url('/src/images/AGC-bkgd-v2.jpg');
   min-height: 100%; 
   background-size: 100% 100%;
 }
 
 /* First image for Phones (Logo. Full height) */
 .bgimg-1b {
-  background-image: url('/src/images/AGC-bkgd-mobile.jpg');
+  background-image: url('/src/images/AGC-bkgd-mobile-v2.jpg');
   min-height: 100%; 
   background-size: 100% 100%;
 }
