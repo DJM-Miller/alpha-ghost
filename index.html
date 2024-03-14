@@ -13,10 +13,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  <!-- For social media icons -->
   <!-- Internal styles -->
   <link rel="stylesheet" href="/src/style.css">
+  <!-- Email -->
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 
-
 <body>
+
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <!-- Navbar on Large screens -->
@@ -54,7 +56,6 @@
   <div class="w3-display-middle" style="white-space:nowrap;">
   </div>
 </div>
-
 <!-- Container (About Section) -->
 <div class="w3-content w3-container w3-padding-64" id="about">
   <h1 class="w3-center">
@@ -81,7 +82,6 @@
     <span class="w3-xxlarge w3-text-white w3-wide">CAMOUFLAGE PATTERNS</span>
  </div>
 </div>
-
 <!-- Container (Camo Patterns Section) -->
 <div class="w3-content w3-container w3-padding-64">
   <p class="w3-center">
@@ -110,7 +110,6 @@
      <span class="w3-xxlarge w3-text-white w3-wide">MEET THE TEAM</span>
   </div>
 </div>
-
 <!-- Container (The Team Section) -->
 <div class="w3-content w3-container w3-padding-32">
   <div class="w3-content w3-container">
@@ -146,7 +145,6 @@
      <span class="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
   </div>
 </div>
-
 <!-- Container (Contact Section) -->
 <div class="w3-content w3-container w3-padding-32" style="max-width: 1200px; margin: 0 auto;">
   <h3 class="w3-center">How Can Alpha Ghost Camouflage Benefit Your Business?</h3>
@@ -170,16 +168,16 @@
         </a>        
       </div>
       <p>Send a message, or leave a note:</p>
-      <form id="contactForm" action="/action_page.php" target="_blank">
+      <form id="contactForm">
         <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
           <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+            <input class="w3-input w3-border" type="text" placeholder="Name" required name="name">
           </div>
           <div class="w3-half">
-            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+            <input class="w3-input w3-border" type="email" placeholder="Email" required name="email">
           </div>
         </div>
-        <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+        <input class="w3-input w3-border" type="text" placeholder="Message" required name="message">
         <p style="font-size: 20px;">Please solve this math problem: <span id="mathCaptcha"></span></p>
         <input type="text" id="captchaInput" name="captchaInput" placeholder="Solution" required>
         <button class="w3-button w3-black w3-section" type="submit">
@@ -194,6 +192,7 @@
   </div>
 </div>
 
+
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-32 w3-opacity w3-hover-opacity-off w3-hide-small w3-hide-medium">
   <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
@@ -201,7 +200,6 @@
     PROTECTED UNDER U.S. COPYRIGHT LAW &copy;
   </p>
 </footer>
-
 <footer class="w3-center w3-black w3-padding-32 w3-opacity w3-hover-opacity-off w3-hide-large">
   <a href="#home" class="w3-button w3-light-grey" onclick="goTop()"><i class="fa fa-arrow-up w3-margin-right"></i> To the top</a>
   <p class="w3-center">
@@ -210,8 +208,9 @@
 </footer>
 
 
-<!-- <script type="module" src="/src/script.js"></script> -->
+
 <script>
+
   function goTop(){
   // Check if the browser supports smooth scrolling
   if ('scrollBehavior' in document.documentElement.style) {
@@ -254,23 +253,71 @@ function generateMathCaptcha() {
 }
 
 document.getElementById("contactForm").addEventListener("submit", function(event) {
-    var captcha = document.getElementById("mathCaptcha").textContent;
-    var userAnswer = document.getElementById("captchaInput").value;
-    var result;
-    
-    // Calculate the expected result of the math captcha
-    eval("result = " + captcha);
+  event.preventDefault(); // Prevent the form from submitting normally
+  
+  // Prepare form data
+  const formData = new FormData(event.target);
+  
+  // Convert form data to JSON
+  const jsonData = {};
+  formData.forEach((value, key) => { jsonData[key] = value; });
 
-    if (parseInt(userAnswer) !== result) {
-        alert("Please solve the math CAPTCHA correctly.");
-        event.preventDefault(); // Prevent form submission
-        generateMathCaptcha(); // Generate a new CAPTCHA
+  //sender gmail and password
+  const out_email = "djs.csprojects@gmail.com";
+  const out_pass = "mbhn xejq ivpu dsja"
+
+  // Configure SMTP settings and send email
+  Email.send({
+    Host: "smtp.gmail.com",
+    Username: out_email, // Your Gmail address
+    Password: out_pass, // Your Gmail password or app-specific password
+    To: out_email, // Recipient's email address
+    From: out_email, // Your verified email address
+    Subject: "AGC Contact Message from " + jsonData.name, // Email subject
+    Body: "Name: " + jsonData.name + "<br>Email: " + jsonData.email + "<br>Message: " + jsonData.message // Email body
+  }).then(
+    message => {
+      // Handle success
+      console.log(message);
+      alert("Message sent successfully!");
     }
+  ).catch(
+    error => {
+      // Handle errors
+      console.error("Error:", error);
+      alert("Error sending message. Please try again later.");
+    }
+  );
+
+  // Send confirmation email to the email submitted in the form
+  Email.send({
+    Host: "smtp.gmail.com",
+    Username: out_email, // Your Gmail address
+    Password: out_pass, // Your Gmail password or app-specific password
+    To: jsonData.email, // Email submitted in the form
+    From: out_email, // Your verified email address
+    Subject: "DO NOT REPLY - Confirmation of Contact Form Submission",
+    Body: "Dear " + jsonData.name + ",<br><br>Thank you for your interest in Alpha Ghost Camo. Your email has been received and we'll contact you as soon as possible.<br><br>Thank you,<br>The Alpha Ghost Camo Team"
+  }).then(
+    message => {
+      // Handle success
+      console.log(message);
+      event.target.reset();
+      generateMathCaptcha();
+    }
+  ).catch(
+    error => {
+      // Handle errors
+      console.error("Error:", error);
+    }
+  );
 });
+
 
 window.onload = function() {
     generateMathCaptcha();
 };
+
 </script>
 </body>
 </html>
