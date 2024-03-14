@@ -283,7 +283,7 @@ async function handleSubmit(event) {
     if (response.ok) {
       const data = await response.json();
       console.log(data.message);
-      alert("Message sent successfully!");
+      alert("Message sent successfully!\nA confirmation email sent to email provided.");
       event.target.reset();
       generateMathCaptcha();
     } else {
