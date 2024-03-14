@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  <!-- For social media icons -->
   <!-- Internal styles -->
   <link rel="stylesheet" href="/src/style.css">
-  <!-- Email -->
+  <!-- Email TO BE REMOVED-->
   <script src="https://smtpjs.com/v3/smtp.js"></script>
 </head>
 
@@ -252,7 +252,7 @@ function generateMathCaptcha() {
     document.getElementById("captchaInput").value = '';
 }
 
-document.getElementById("contactForm").addEventListener("submit", function(event) {
+document.getElementById("contactForm").addEventListener("submit", async function(event) {
   event.preventDefault(); // Prevent the form from submitting normally
   
   // Prepare form data
@@ -262,56 +262,31 @@ document.getElementById("contactForm").addEventListener("submit", function(event
   const jsonData = {};
   formData.forEach((value, key) => { jsonData[key] = value; });
 
-  //sender gmail and password
-  const out_email = "djs.csprojects@gmail.com";
-  const out_pass = "mbhn xejq ivpu dsja"
+  // Make POST request to Lambda function endpoint
+  try {
+    const response = await fetch('https://wxdsvvglcocwr66rszcyc6plvq0husxj.lambda-url.us-east-2.on.aws/', {
+      method: 'POST',
+      body: JSON.stringify(jsonData),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
 
-  // Configure SMTP settings and send email
-  Email.send({
-    Host: "smtp.gmail.com",
-    Username: out_email, // Your Gmail address
-    Password: out_pass, // Your Gmail password or app-specific password
-    To: out_email, // Recipient's email address
-    From: out_email, // Your verified email address
-    Subject: "AGC Contact Message from " + jsonData.name, // Email subject
-    Body: "Name: " + jsonData.name + "<br>Email: " + jsonData.email + "<br>Message: " + jsonData.message // Email body
-  }).then(
-    message => {
-      // Handle success
-      console.log(message);
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data.message);
       alert("Message sent successfully!");
-    }
-  ).catch(
-    error => {
-      // Handle errors
-      console.error("Error:", error);
-      alert("Error sending message. Please try again later.");
-    }
-  );
-
-  // Send confirmation email to the email submitted in the form
-  Email.send({
-    Host: "smtp.gmail.com",
-    Username: out_email, // Your Gmail address
-    Password: out_pass, // Your Gmail password or app-specific password
-    To: jsonData.email, // Email submitted in the form
-    From: out_email, // Your verified email address
-    Subject: "DO NOT REPLY - Confirmation of Contact Form Submission",
-    Body: "Dear " + jsonData.name + ",<br><br>Thank you for your interest in Alpha Ghost Camo. Your email has been received and we'll contact you as soon as possible.<br><br>Thank you,<br>The Alpha Ghost Camo Team"
-  }).then(
-    message => {
-      // Handle success
-      console.log(message);
       event.target.reset();
       generateMathCaptcha();
+    } else {
+      throw new Error('Failed to send message');
     }
-  ).catch(
-    error => {
-      // Handle errors
-      console.error("Error:", error);
-    }
-  );
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Error sending message. Please try again later.");
+  }
 });
+
 
 
 window.onload = function() {
