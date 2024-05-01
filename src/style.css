@@ -7,7 +7,7 @@ body, html {
 }
 
 /* Create a Parallax Effect */
-.bgimg-1a, .bgimg-1b, .bgimg-2, .bgimg-3, .bgimg-4 {
+.bgimg-1a, .bgimg-1b, .bgimg-2, .bgimg-3, .bgimg-4{
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -42,9 +42,46 @@ body, html {
 
 /* Forth image */
 .bgimg-4 {
-  background-image: url("/src/images/bkgr-jungle.jpg");
+  background-image: url("/src/images/bkgd-jungle.jpg");
   min-height: 400px;
 }
+
+/* For PHOTOS page */
+/* For Desktops */
+@media screen and (min-width: 768px) {
+  .bgimg-5 {
+    background-image: url("/src/images/bkgd-mesa.jpg");
+    height: 50vh;
+  }
+}
+
+/* For Mobile Devices */
+@media screen and (max-width: 767px) {
+  .bgimg-5 {
+    background-image: url("/src/images/bkgd-mesa-mobile.jpg");
+    height: 75vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.bgimg-6 {
+  background-image: url("/src/images/pattern-desert.jpg");
+  min-height: 200px;
+}
+
+.bgimg-7 {
+  background-image: url("/src/images/pattern-mountain.jpg");
+  min-height: 200px;
+}
+
+.bgimg-8 {
+  background-image: url("/src/images/pattern-jungle.jpg");
+  min-height: 200px;
+}
+
 
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
@@ -71,23 +108,45 @@ body, html {
     min-height: 445px;
   }
 
-  .profile-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-  }
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
 
-  .bold-text {
-    font-weight: bold;
-  }
+.bold-text {
+  font-weight: bold;
+}
 
-  .contact-padding {
-    padding-bottom: 0px;
-    padding-top: 32px;
-  }
+.contact-padding {
+  padding-bottom: 0px;
+  padding-top: 32px;
+}
 
-  .footer-padding {
-    padding-top: 0px;
-    padding-bottom: 32px;
-  }
+.footer-padding {
+  padding-top: 0px;
+  padding-bottom: 32px;
+}
+
+.w3-half img{
+  margin-bottom:-6px;
+  margin-top:16px;
+  opacity:0.8;
+  cursor:pointer
+}
+
+.w3-half img:hover{
+  opacity:1
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.logo {
+  width: 75%; /* Adjust width as needed */
+  max-width: 1000px; /* Set maximum width to prevent stretching */
+}
+
