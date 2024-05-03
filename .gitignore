@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # Unused assets
-src/unused_images
+/src/unused-images
