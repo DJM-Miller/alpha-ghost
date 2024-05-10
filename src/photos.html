@@ -47,17 +47,21 @@
         <!-- Top Parallax Image -->
         <div class="bgimg-5 w3-display-container w3-opacity-min" id="home">
             <div class="w3-display-middle" style="white-space:nowrap;">
-                <span class="w3-xxxlarge w3-text-black w3-text-bold w3-wide">Photos</span>
+                <span class="w3-jumbo w3-text-black w3-wide">PHOTOS</span>
             </div>
         </div>
 
+        <div class="click-to-enlarge">
+            <p>CLICK TO ENLARGE IMAGES</p>
+        </div>
+
         <!-- (Hunting Photos Section) -->
-        <!-- Third Parallax Image -->
         <div class="bgimg-6 w3-display-container w3-opacity-min" id="team">
             <div class="w3-display-middle">
-            <h1 class="w3-xxlarge w3-text-black w3-wide">HUNTING</h1>
+                <h1 class="w3-xxlarge w3-text-black w3-wide" style="font-weight: bold;">HUNTING</h1>
             </div>
         </div>
+        
         <section id = "Hunting Photos" class="w3-container w3-padding-large" style="margin-left:10%; margin-right: 10%;  margin-bottom: 32px;">
             <!-- Photo grid (modal) -->
             <div class="w3-row-padding">
@@ -75,7 +79,7 @@
 
         <div class="bgimg-7 w3-display-container w3-opacity-min" id="team">
             <div class="w3-display-middle">
-            <h1 class="w3-xxlarge w3-text-black w3-wide">TACTICAL</h1>
+            <h1 class="w3-xxlarge w3-text-black w3-wide" style="font-weight: bold;">TACTICAL</h1>
             </div>
         </div>
         <!-- (Tactical Photos Section) -->
@@ -83,22 +87,22 @@
             <!-- Photo grid (modal) -->
             <div class="w3-row-padding" style="display: flex;">
                 <div class="w3-third" style="display: flex; flex-direction: column;">
-                    <img src="/src/images/camo-coolwhite.jpg" style="width:100%; height: 50%; flex: 1;" onclick="onClick(this)" alt="Cool-white room: ALPHA GHOST WOODLAND(left) and MOUNTAIN ARID(right) in ">
-                    <img src="/src/images/camo-marpat.jpg" style="width:100%; height: 50%; margin-top:10px; flex: 1;" onclick="onClick(this)" alt="Near-Infrared: ALPHA GHOST MOUNTAIN ARID vs. MARPAT">
+                    <img src="/src/images/camo-coolwhite.jpg" style="width:100%; height: 50%; flex: 1;" onclick="onClick(this)" alt="Cool White Room: ALPHA GHOST WOODLAND (left) and MOUNTAIN ARID (right)">
+                    <img src="/src/images/camo-marpat.jpg" style="width:100%; height: 50%; margin-top:10px; flex: 1;" onclick="onClick(this)" alt="Near Infrared: ALPHA GHOST MOUNTAIN ARID vs. MARPAT">
                 </div>
                 <div class="w3-third" style="display: flex; flex-direction: column;">
                     <img src="/src/images/camo-demo.png" style="width:100%; flex: 1;" onclick="onClick(this)" alt="ALPHA GHOST MOUNTAIN ARID PROTOTYPE MODEL UNIFORM">
                 </div>
                 <div class="w3-third" style="display: flex; flex-direction: column;">
-                    <img src="/src/images/camo-multicam.jpg" style="width:100%; height: 50%; flex: 1;" onclick="onClick(this)" alt="Near-Infrared: ALPHA GHOST MOUNTAIN ARID vs. MULTICAM">
-                    <img src="/src/images/camo-NIR.jpg" style="width:100%; height: 50%; margin-top:10px; flex: 1;" onclick="onClick(this)" alt="Near-Infrared: ALPHA GHOST WOODLAND(left) and MOUNTAIN ARID(right)">
+                    <img src="/src/images/camo-multicam.jpg" style="width:100%; height: 50%; flex: 1;" onclick="onClick(this)" alt="Near Infrared: ALPHA GHOST MOUNTAIN ARID vs. MULTICAM">
+                    <img src="/src/images/camo-NIR.jpg" style="width:100%; height: 50%; margin-top:10px; flex: 1;" onclick="onClick(this)" alt="Near Infrared: ALPHA GHOST WOODLAND (left) and MOUNTAIN ARID (right)">
                 </div>
             </div>
         </section>
 
         <div class="bgimg-8 w3-display-container w3-opacity-min" id="team">
             <div class="w3-display-middle">
-            <h1 class="w3-xxlarge w3-text-black w3-wide">COMMERCIAL</h1>
+            <h1 class="w3-xxlarge w3-text-black w3-wide" style="font-weight: bold;">COMMERCIAL</h1>
             </div>
         </div>
         <!-- (Commercial Photos Section) -->
@@ -106,13 +110,13 @@
             <!-- Photo grid (modal) -->
             <div class="w3-row-padding">
                 <div class="w3-third">
-                <img src="/src/images/trunks-black.png" style="width:100%" onclick="onClick(this)" alt="Black Trunks">
+                <img src="/src/images/trunks-black.png" style="width:100%" onclick="onClick(this)" alt="Broad Shorts">
                 </div>
                 <div class="w3-third">
-                    <img src="/src/images/trunks-green.png" style="width:100%" onclick="onClick(this)" alt="Green Trunks">
+                    <img src="/src/images/trunks-green.png" style="width:100%" onclick="onClick(this)" alt="Broad Shorts">
                 </div>
                 <div class="w3-third">
-                    <img src="/src/images/trunks-blue.png" style="width:100%" onclick="onClick(this)" alt="Blue Trunks">
+                    <img src="/src/images/trunks-blue.png" style="width:100%" onclick="onClick(this)" alt="Broad Shorts">
                 </div>
             </div>
             <div class="w3-row-padding w3-center" style=" margin-left:10%; margin-right:10%;">
@@ -121,11 +125,11 @@
         </section>
 
         <!-- Modal for full size images on click-->
-        <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+        <div id="modal01" class="w3-modal w3-black" style="padding-top:0;" onclick="this.style.display='none'">
             <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
-            <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-            <img id="img01" class="w3-image">
-            <p id="caption"></p>
+            <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64" style="width: 40vw; height: 100vh; ">
+                <img id="img01" class="w3-image" style="max-width: 100%; max-height: 100%;">
+                <p id="caption"></p>
             </div>
         </div>
     </main>
@@ -133,6 +137,9 @@
     <footer class="w3-center w3-black footer-padding w3-opacity  w3-padding-large">
         <div class="logo-container">
             <img src="../src/images/AGC-logo-alt-white.png" alt="Logo" class="logo">
+        </div>
+        <div class="click-to-enlarge">
+            <p>CLICK TO ENLARGE IMAGES</p>
         </div>
         <div class=" w3-hide-small w3-hide-medium w3-hover-opacity-off">
           <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>

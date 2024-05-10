@@ -69,17 +69,17 @@ body, html {
 
 .bgimg-6 {
   background-image: url("/src/images/pattern-desert.jpg");
-  min-height: 200px;
+  min-height: 120px;
 }
 
 .bgimg-7 {
   background-image: url("/src/images/pattern-mountain.jpg");
-  min-height: 200px;
+  min-height: 120px;
 }
 
 .bgimg-8 {
   background-image: url("/src/images/pattern-jungle.jpg");
-  min-height: 200px;
+  min-height: 120px;
 }
 
 
@@ -148,5 +148,12 @@ body, html {
 .logo {
   width: 75%; /* Adjust width as needed */
   max-width: 1000px; /* Set maximum width to prevent stretching */
+}
+
+.click-to-enlarge {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
 }
 
